@@ -1,7 +1,7 @@
 " file is erb
 let s:file_extension = "other"
 
-function!! g:SetERB()
+function! g:SetERB()
     let s:file_extension = "erb"
 endfunction
 
