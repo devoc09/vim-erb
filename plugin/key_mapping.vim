@@ -1,13 +1,9 @@
 " file is erb
-let file_extension = "other"
 
-function! SetErb()
-  let file_extension = "erb"
+function! SetErbMapping()
+    :inoremap <buffer> < <%
+    :inoremap <buffer> > %>
 endfunction
 
-autocmd BufRead,BufNewFile *.erb call SetErb()
+autocmd BufRead,BufNewFile *.erb call SetErbMapping()
 
-if file_extension == "erb"
-  inoremap < <%
-  inoremap > %>
-endif
