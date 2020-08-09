@@ -1,13 +1,11 @@
 " file is erb
 let s:file_extension = "other"
 
-function! g:SetERB()
-    let s:file_extension = "erb"
-endfunction
+command! SetERB let s:file_extension = "erb"
 
-command! ERB call g:SetERB()
+autocmd BufRead,BufNewFile *.erb SetERB
 
 if s:file_extension == "erb"
-    inoremap < <%
-    inoremap > %>
+  inoremap < <%
+  inoremap > %>
 endif
